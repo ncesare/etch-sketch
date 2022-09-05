@@ -1,0 +1,7 @@
+.container {
+    display: flex;
+    justify-content: stretch; /* Distrubte items evenly to fill container*/
+    padding: 0;
+    width: max-content;
+    height: max-content;
+}
