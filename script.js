@@ -1,11 +1,18 @@
 // Initialize variables and make the first etch-n-sketch grid of 16x16
 
+const clearButton = document.querySelector('#clear');
 const sketchGrid = document.querySelector('.sketch-grid');
 const gridSlider = document.querySelector('#gridSlider');
 const gridSizeDisplay = document.querySelector('#gridSizeDisplay');
 let gridSize = gridSlider.value;
 gridSizeDisplay.textContent = `${gridSize} by ${gridSize}`;
 makeGrid(16);
+
+clearButton.addEventListener('click', clearGrid);
+
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
 
 // Whenever the user changes the value on the slider, make a new grid accordingly.
 
@@ -36,9 +43,28 @@ function makeGrid(gridSize) {
             
             // Add appropriate event listener to each box as it's created.
 
-            box.addEventListener('mouseover', () => box.style.backgroundColor = 'blue');
+            box.addEventListener('mouseover', (event) => drawInBox(event, box));
+            box.addEventListener('mousedown', (event) => drawInBox(event, box));
         }
     }
 }
 
 // Allow the user to change background-color on grid boxes by clicking and hovering.
+
+function drawInBox(event, box) {
+    if (event.type === 'mouseover' && mouseDown === true) {
+        console.log('mouseover');
+        box.style.backgroundColor = 'rgb(28, 17, 134)';
+    }
+    else if (event.type === 'mousedown') {
+        console.log('mousedown');
+        box.style.backgroundColor = 'rgb(28, 17, 134)';
+    }
+}
+
+function clearGrid() {
+    boxes = document.querySelectorAll('.box');
+    boxes.forEach(box => {
+        box.style.backgroundColor = 'white';
+    });
+}
