@@ -1,7 +1,26 @@
-.container {
+.sketch-grid {
     display: flex;
-    justify-content: stretch; /* Distrubte items evenly to fill container*/
+    flex-direction: column;
+    justify-content: stretch; /* Distrubte items evenly to fill container */ 
     padding: 0;
     width: max-content;
     height: max-content;
+    min-height: 200px;
+    margin: 200px auto;
+}
+
+.row {
+    display: flex;
+    justify-content: stretch; /* Distrubte items evenly to fill container*/
+    padding: 0;
+    min-width: 100px;
+}
+
+.box {
+    height: 1em;
+    width: 1em;
+}
+
+.sketch-grid, .row, .box {
+    border: 1px solid black;
 }
