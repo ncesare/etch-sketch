@@ -1,26 +1,39 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 200px auto;
+}
+
+.control-panel {
+    border: 2px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 20%;
+}
+
+.slider {
+    width: 80%;
+}
+
 .sketch-grid {
     display: flex;
     flex-direction: column;
     justify-content: stretch; /* Distrubte items evenly to fill container */ 
     padding: 0;
-    width: max-content;
-    height: max-content;
-    min-height: 200px;
-    margin: 200px auto;
+    width: 400px;
+    height: 400px;
 }
 
 .row {
     display: flex;
-    justify-content: stretch; /* Distrubte items evenly to fill container*/
+    justify-content: stretch; /* Distrubte items evenly to fill container */
     padding: 0;
     min-width: 100px;
 }
 
-.box {
-    height: 1em;
-    width: 1em;
-}
-
-.sketch-grid, .row, .box {
+.sketch-grid, .box {
     border: 1px solid black;
 }
