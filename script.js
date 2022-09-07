@@ -30,10 +30,13 @@ function makeGrid(gridSize) {
         for (let i = 0; i < gridSize; i++) {
             const box = document.createElement('div');
             box.classList.add('box');
-            let borderOffset = gridSize * 2; // Accounting for the borders in height and width. Remove this when I remove those.
-            box.style.width = ((400 - borderOffset) / gridSize) + 'px';
-            box.style.height = ((400 - borderOffset) / gridSize) + 'px';
+            box.style.width = (400 / gridSize) + 'px';
+            box.style.height = (400/ gridSize) + 'px';
             row.appendChild(box);
+            
+            // Add appropriate event listener to each box as it's created.
+
+            box.addEventListener('mouseover', () => box.style.backgroundColor = 'blue');
         }
     }
 }
