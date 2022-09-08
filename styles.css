@@ -1,6 +1,10 @@
+label, label span {
+    font-size: 20pt;
+}
+
 .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 80%;
     margin: 200px auto;
 }
@@ -14,7 +18,26 @@
 }
 
 .slider {
+    -webkit-appearance: none;
     width: 80%;
+    height: 2em;
+    background: rgb(28, 17, 134);
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2em;
+    height: 2em;
+    background: rgb(169, 206, 240);
 }
 
 button {
@@ -24,6 +47,11 @@ button {
     border-radius: 6px;
     background-color: rgb(28, 17, 134);
     color: white;
+    opacity: 0.7;
+}
+
+button:hover {
+    opacity: 1;
 }
 
 .sketch-grid {
