@@ -56,18 +56,9 @@ button:hover {
 
 .sketch-grid {
     display: flex;
-    flex-direction: column;
-    justify-content: stretch; /* Distrubte items evenly to fill container */ 
-    padding: 0;
+    flex-wrap: wrap;
     width: 400px;
     height: 400px;
-}
-
-.row {
-    display: flex;
-    justify-content: stretch; /* Distrubte items evenly to fill container */
-    padding: 0;
-    min-width: 100px;
 }
 
 .sketch-grid, .control-panel {

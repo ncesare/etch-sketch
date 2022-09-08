@@ -25,27 +25,19 @@ gridSlider.oninput = function() {
 function makeGrid(gridSize) {
     sketchGrid.innerHTML = ''; // Delete the previous grid before making a new one.
 
-    // Make gridSize number of rows.
+    // Populate the grid with gridSize**2 number of boxes.
 
-    for (let n = 0; n < gridSize; n++) {
-        const row = document.createElement('div');
-        row.classList.add('row');
-        sketchGrid.appendChild(row);
-
-        // Populate each row with gridSize number of boxes.
-
-        for (let i = 0; i < gridSize; i++) {
-            const box = document.createElement('div');
-            box.classList.add('box');
-            box.style.width = (400 / gridSize) + 'px';
-            box.style.height = (400/ gridSize) + 'px';
-            row.appendChild(box);
+    for (let i = 0; i < gridSize**2; i++) {
+        const box = document.createElement('div');
+        box.classList.add('box');
+        box.style.width = (400 / gridSize) + 'px';
+        box.style.height = (400 / gridSize) + 'px';
+        sketchGrid.appendChild(box);
             
-            // Add appropriate event listener to each box as it's created.
+        // Add appropriate event listener to each box as it's created.
 
-            box.addEventListener('mouseover', (event) => drawInBox(event, box));
-            box.addEventListener('mousedown', (event) => drawInBox(event, box));
-        }
+        box.addEventListener('mouseover', (event) => drawInBox(event, box));
+        box.addEventListener('mousedown', (event) => drawInBox(event, box));
     }
 }
 
